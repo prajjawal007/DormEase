@@ -19,7 +19,7 @@ app.use(cookieParser());
 
 //cors
 app.use(cors({
-  origin: "http://localhost:5173", // Replace with frontend URL
+  origin: "*", // Replace with frontend URL
   credentials: true
 }));
 
