@@ -19,7 +19,7 @@ app.use(cookieParser());
 
 //cors
 app.use(cors({
-  origin: "*", // Replace with frontend URL
+  origin: ['http://localhost:5173', 'https://dormease.onrender.com'], // Replace with frontend URL
   credentials: true
 }));
 
