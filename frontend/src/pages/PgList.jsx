@@ -19,21 +19,24 @@ const PGList = () => {
   useEffect(() => {
     const fetchPGs = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/pgs/${encodeURIComponent(userCollege)}`);
-        const data = await response.json();
-        if (response.ok) {
-          setPgs(data);
+        const response = await axiosInstance.get(`/pgs/${encodeURIComponent(userCollege)}`);
+
+        if (response.status === 200) {
+          setPgs(response.data); // Use response.data directly
         } else {
-          toast.error(data.message);
+          toast.error("Failed to fetch PGs.");
         }
       } catch (error) {
         console.error("Error fetching PGs:", error);
+        toast.error("An error occurred while fetching PGs.");
       } finally {
         setLoading(false);
       }
     };
+
     fetchPGs();
-  }, []);
+  }, [userCollege]); // Added dependency to prevent stale state issues
+
 
   const handleConfirmResidence = async (pgId) => {
     try {
