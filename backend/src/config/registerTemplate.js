@@ -57,7 +57,7 @@ export const registerTemplate = ({ username }) => {
               <p>Hi <strong>${username}</strong>,</p>
               <p>Finding a perfect place to stay just got easier! DormEase helps students connect, find PGs, and coordinate with roommates effortlessly.</p>
               <p>Start exploring now and make your college stay stress-free!</p>
-              <a class="button" href="https://dormease.com">Get Started</a>
+              <a class="button" href="https://dormease.onrender.com">Get Started</a>
           </div>
           <div class="footer">For any queries, contact us at dormeaseofficial@gmail.com</div>
       </div>
